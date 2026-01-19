@@ -133,7 +133,7 @@ $(document).ready(function() {
         widgets: ['zebra']
     });
 
-    var data = {"OkPercent": 93.33333333333333, "KoPercent": 6.666666666666667};
+    var data = {"OkPercent": 97.26118904475618, "KoPercent": 2.738810955243821};
     var dataset = [
         {
             "label" : "FAIL",
@@ -173,7 +173,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.7833333333333333, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.45, 500, 1500, "Signup_Load_Test"], "isController": false}, {"data": [0.9, 500, 1500, "Email_confirmationloadtest"], "isController": false}, {"data": [1.0, 500, 1500, "Update_passwordloadtest"], "isController": false}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.5237140948563794, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.5210420841683366, 500, 1500, "Signup_Load_Test"], "isController": false}, {"data": [0.9150801603206413, 500, 1500, "Email_confirmationloadtest"], "isController": false}, {"data": [0.13502004008016033, 500, 1500, "Update_passwordloadtest"], "isController": false}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 30, 2, 6.666666666666667, 458.1333333333334, 175, 1251, 278.0, 940.0000000000001, 1121.1999999999998, 1251.0, 0.06917845967241693, 0.04186062457195828, 0.021332276968646015], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["Signup_Load_Test", 10, 1, 10.0, 900.0, 779, 1251, 863.5, 1227.4, 1251.0, 1251.0, 0.023085571287089855, 0.006628083943754314, 0.009110233747180676], "isController": false}, {"data": ["Email_confirmationloadtest", 10, 1, 10.0, 195.3, 175, 246, 189.5, 242.9, 246.0, 246.0, 0.02312892758101485, 0.006383041928119919, 0.006100706386359484], "isController": false}, {"data": ["Update_passwordloadtest", 10, 0, 0.0, 279.1000000000001, 264, 312, 278.0, 309.3, 312.0, 312.0, 0.02312304465753615, 0.028955742348006446, 0.006166897945286252], "isController": false}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 5988, 164, 2.738810955243821, 21841.202070808315, 167, 104605, 699.0, 100555.1, 100882.55, 101534.77, 3.7505096822401343, 2.2458583228995925, 1.1687820909952693], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["Signup_Load_Test", 1996, 55, 2.755511022044088, 1014.8712424849671, 301, 21164, 724.0, 1806.6, 2676.699999999995, 4803.399999999998, 1.3345832235667607, 0.38966175653484425, 0.5310251787662862], "isController": false}, {"data": ["Email_confirmationloadtest", 1996, 40, 2.004008016032064, 315.71442885771484, 168, 6404, 188.0, 620.0, 925.8999999999992, 2169.4199999999996, 1.3352921185653772, 0.3731193082002724, 0.3565717530943856], "isController": false}, {"data": ["Update_passwordloadtest", 1996, 69, 3.4569138276553106, 64193.02054108214, 167, 104605, 100278.0, 101005.3, 101381.0, 103578.21, 1.251442042433666, 1.5330676886097456, 0.3378470551377464], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -217,7 +217,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["400/Bad Request", 2, 100.0, 6.666666666666667], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["400/Bad Request", 57, 34.75609756097561, 0.9519038076152304], "isController": false}, {"data": ["500/Internal Server Error", 65, 39.63414634146341, 1.085504342017368], "isController": false}, {"data": ["401/Unauthorized", 42, 25.609756097560975, 0.7014028056112225], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -228,7 +228,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 30, 2, "400/Bad Request", 2, "", "", "", "", "", "", "", ""], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["Signup_Load_Test", 10, 1, "400/Bad Request", 1, "", "", "", "", "", "", "", ""], "isController": false}, {"data": ["Email_confirmationloadtest", 10, 1, "400/Bad Request", 1, "", "", "", "", "", "", "", ""], "isController": false}, {"data": [], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 5988, 164, "500/Internal Server Error", 65, "400/Bad Request", 57, "401/Unauthorized", 42, "", "", "", ""], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["Signup_Load_Test", 1996, 55, "500/Internal Server Error", 55, "", "", "", "", "", "", "", ""], "isController": false}, {"data": ["Email_confirmationloadtest", 1996, 40, "400/Bad Request", 38, "500/Internal Server Error", 2, "", "", "", "", "", ""], "isController": false}, {"data": ["Update_passwordloadtest", 1996, 69, "401/Unauthorized", 42, "400/Bad Request", 19, "500/Internal Server Error", 8, "", "", "", ""], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 
